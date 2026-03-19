@@ -1084,6 +1084,33 @@
       .staking-stat { padding: 24px; }
     }
 
+    /* ── SECTION BG VIDEO ── */
+    .solution,
+    .cta-section {
+      position: relative;
+    }
+
+    .section-bg-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.18;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .solution .section-inner,
+    .solution .solution-header,
+    .cta-section h2,
+    .cta-section p,
+    .cta-section .btn-primary,
+    .cta-section::before {
+      position: relative;
+      z-index: 1;
+    }
+
   </style>
 </head>
 <body>
@@ -1106,7 +1133,7 @@
       <li><a href="#how">How It Works</a></li>
       <li><a href="#benefits">Ecosystem</a></li>
     </ul>
-    <a href="mailto:info@flowra.wtf" class="nav-cta">Get in touch</a>
+    <a href="/cdn-cgi/l/email-protection#9ef7f0f8f1def8f2f1e9ecffb0e9eaf8" class="nav-cta">Get in touch</a>
   </nav>
 
   <!-- HERO -->
@@ -1173,6 +1200,9 @@
 
   <!-- SOLUTION -->
   <section class="solution" id="solution">
+    <video class="section-bg-video" autoplay muted loop playsinline>
+      <source src="bg-solution.webm" type="video/webm">
+    </video>
     <div class="section-inner">
       <div class="solution-header">
         <div>
@@ -1391,9 +1421,12 @@
 
   <!-- CTA -->
   <section class="cta-section">
+    <video class="section-bg-video" autoplay muted loop playsinline>
+      <source src="bg-cta.webm" type="video/webm">
+    </video>
     <h2>A Better Orderflow<br>Auction for<br>Solana.</h2>
     <p>Flowra is working toward a more transparent and accessible MEV ecosystem — one that works a little better for everyone involved.</p>
-    <a href="mailto:info@flowra.wtf" class="btn-primary">Get in touch →</a>
+    <a href="/cdn-cgi/l/email-protection#472e29212807212b2830352669303321" class="btn-primary">Get in touch →</a>
   </section>
 
   <!-- FOOTER -->
@@ -1427,19 +1460,19 @@
             <h4>Resources</h4>
             <ul>
               <li><a href="https://flowra.gitbook.io/flowra" target="_blank">Documentation</a></li>
-              <li><a href="mailto:info@flowra.wtf">Contact</a></li>
+              <li><a href="/cdn-cgi/l/email-protection#f59c9b939ab593999a828794db828193">Contact</a></li>
             </ul>
           </div>
         </div>
       </div>
       <div class="footer-bottom">
         <p>© 2026 Flowra. All rights reserved.</p>
-        <a href="mailto:info@flowra.wtf" class="footer-email">info@flowra.wtf</a>
+        <a href="/cdn-cgi/l/email-protection#fb92959d94bb9d97948c899ad58c8f9d" class="footer-email"><span class="__cf_email__" data-cfemail="90f9fef6ffd0f6fcffe7e2f1bee7e4f6">[email&#160;protected]</span></a>
       </div>
     </div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // Intersection Observer for scroll animations
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
