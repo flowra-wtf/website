@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>FLOWRA — Open Orderflow Auction for Solana</title>
+  <title>FLOWRA</title>
 
   <!-- 파비콘 -->
   <link rel="icon" type="image/png" href="favicon.png">
@@ -1091,7 +1091,13 @@
   <!-- NAV -->
   <nav>
     <a href="#" class="nav-logo">
-      <img src="logo.png" height="36" alt="FLOWRA">
+      <svg class="logo-icon" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="42" cy="38" rx="26" ry="14" stroke="#F2EEE9" stroke-width="1.6" transform="rotate(-30 42 38)"/>
+        <ellipse cx="42" cy="42" rx="28" ry="15" stroke="#F2EEE9" stroke-width="1.2" transform="rotate(-15 42 42)" opacity="0.75"/>
+        <ellipse cx="40" cy="45" rx="30" ry="15.5" stroke="#F2EEE9" stroke-width="0.9" transform="rotate(0 40 45)" opacity="0.55"/>
+        <ellipse cx="38" cy="47" rx="32" ry="15" stroke="#F2EEE9" stroke-width="0.6" transform="rotate(10 38 47)" opacity="0.35"/>
+        <ellipse cx="36" cy="48" rx="34" ry="14.5" stroke="#F2EEE9" stroke-width="0.4" transform="rotate(18 36 48)" opacity="0.2"/>
+      </svg>
       <span>FLOWRA</span>
     </a>
     <ul class="nav-links">
@@ -1113,7 +1119,7 @@
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <div class="hero-tag">Open Orderflow Auction · Solana</div>
-      <h1>The Open<br><em>Order&shy;flow</em><br>Auction</h1>
+      <h1><em>O</em>pen<br><em>O</em>rderflow<br><em>A</em>uction</h1>
       <p class="hero-sub">
         MEV and priority fees flow through channels that are hard to see and harder to access. Flowra brings them into the open — creating a transparent auction where validators, users, and searchers all participate on equal footing.
       </p>
@@ -1171,10 +1177,10 @@
       <div class="solution-header">
         <div>
           <div class="section-label">The Solution</div>
-          <h2>An Open <span>Orderflow Auction</span> for Everyone</h2>
+          <h2>An <span>Open Orderflow Auction</span> for Everyone</h2>
         </div>
         <p>
-          Flowra builds an Open Orderflow Auction directly on Solana. Multiple validators share pending transactions to form an accessible stream. Searchers participate through a standard API, and the resulting competition creates better outcomes for validators, users, and the ecosystem.
+          Flowra builds an <span style="color: var(--orange); font-weight: 600;">Open Orderflow Auction</span> directly on Solana. Multiple validators share pending transactions to form an accessible stream. Searchers participate through a standard API, and the resulting competition creates better outcomes for validators, users, and the ecosystem.
         </p>
       </div>
 
@@ -1396,7 +1402,14 @@
       <div class="footer-top">
         <div class="footer-brand">
           <div class="logo-row">
-           <img src="logo.png" height="28" alt="FLOWRA">
+            <svg width="28" height="28" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="42" cy="38" rx="26" ry="14" stroke="#F2EEE9" stroke-width="1.6" transform="rotate(-30 42 38)"/>
+              <ellipse cx="42" cy="42" rx="28" ry="15" stroke="#F2EEE9" stroke-width="1.2" transform="rotate(-15 42 42)" opacity="0.75"/>
+              <ellipse cx="40" cy="45" rx="30" ry="15.5" stroke="#F2EEE9" stroke-width="0.9" transform="rotate(0 40 45)" opacity="0.55"/>
+              <ellipse cx="38" cy="47" rx="32" ry="15" stroke="#F2EEE9" stroke-width="0.6" transform="rotate(10 38 47)" opacity="0.35"/>
+              <ellipse cx="36" cy="48" rx="34" ry="14.5" stroke="#F2EEE9" stroke-width="0.4" transform="rotate(18 36 48)" opacity="0.2"/>
+            </svg>
+            <span>FLOWRA</span>
           </div>
           <p class="footer-tagline">Open Orderflow Auction on Solana. Bringing transparency and accessibility to MEV.</p>
         </div>
@@ -1426,7 +1439,7 @@
     </div>
   </footer>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // Intersection Observer for scroll animations
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -1438,7 +1451,6 @@
 
     document.querySelectorAll('.fade-up, .problem-item').forEach(el => observer.observe(el));
 
-    // Nav scroll effect
     const nav = document.querySelector('nav');
     window.addEventListener('scroll', () => {
       if (window.scrollY > 60) {
