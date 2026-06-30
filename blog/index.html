@@ -197,23 +197,8 @@
       border-color: rgba(241,86,27,0.2);
     }
 
-    .blog-card-image {
-      width: 100%;
-      aspect-ratio: 16 / 10;
-      background: linear-gradient(135deg, #0a2029 0%, #1F2E73 60%, #F1561B 130%);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .blog-card-image::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 70% 60% at 30% 30%, rgba(241,86,27,0.25) 0%, transparent 60%);
-    }
-
     .blog-card-body {
-      padding: 28px 26px 32px;
+      padding: 32px 28px;
       display: flex;
       flex-direction: column;
       flex: 1;
@@ -279,18 +264,6 @@
     }
 
     .blog-card:hover .blog-card-read svg { transform: translateX(4px); }
-
-    /* ── EMPTY STATE NOTE (remove once real posts are added) ── */
-    .blog-note {
-      grid-column: 1 / -1;
-      text-align: center;
-      padding: 60px 24px;
-      border: 1px dashed rgba(242,238,233,0.15);
-      color: rgba(242,238,233,0.35);
-      font-size: 13px;
-      font-weight: 400;
-      line-height: 1.7;
-    }
 
     /* ── FOOTER ── */
     footer {
@@ -442,7 +415,6 @@
     <div class="blog-grid" id="blog-grid">
 
       <a href="https://blockchainreporter.net/transparency-may-be-solanas-next-competitive-advantage/" class="blog-card fade-up" target="_blank" rel="noopener">
-        <div class="blog-card-image"></div>
         <div class="blog-card-body">
           <div class="blog-card-meta">
             <span>Press</span>
@@ -461,7 +433,6 @@
       </a>
 
       <a href="https://cryptodaily.co.uk/2026/06/blockchain-transaction-fees-arent-fair-the-real-problem-is-that-users-cant-see-the-market" class="blog-card fade-up" target="_blank" rel="noopener">
-        <div class="blog-card-image"></div>
         <div class="blog-card-body">
           <div class="blog-card-meta">
             <span>Press</span>
@@ -478,10 +449,6 @@
           </div>
         </div>
       </a>
-
-      <div class="blog-note">
-        More articles coming soon — duplicate a card block above in the HTML to add new posts.
-      </div>
 
     </div>
   </div>
