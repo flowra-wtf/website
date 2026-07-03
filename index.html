@@ -1199,21 +1199,37 @@
       border-color: rgba(241,86,27,0.18);
     }
 
+    .quote-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+
+    .quote-role-top {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 18px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--orange);
+      padding-top: 8px;
+    }
+
     .quote-mark {
       font-family: 'Barlow Condensed', sans-serif;
       font-size: 64px;
       font-weight: 900;
       color: var(--orange);
       line-height: 0.6;
-      margin-bottom: 24px;
-      opacity: 0.8;
+      opacity: 0.5;
     }
 
     .quote-text {
-      font-size: 14px;
-      font-weight: 300;
-      line-height: 1.8;
-      color: rgba(242,238,233,0.65);
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.85;
+      color: rgba(242,238,233,0.95);
       flex: 1;
       margin-bottom: 28px;
     }
@@ -1223,12 +1239,12 @@
       flex-direction: column;
       gap: 3px;
       padding-top: 20px;
-      border-top: 1px solid rgba(242,238,233,0.08);
+      border-top: 1px solid rgba(242,238,233,0.12);
     }
 
     .quote-name {
       font-family: 'Barlow Condensed', sans-serif;
-      font-size: 17px;
+      font-size: 18px;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.04em;
@@ -1236,10 +1252,10 @@
     }
 
     .quote-role {
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 500;
       letter-spacing: 0.04em;
-      color: var(--orange);
+      color: rgba(242,238,233,0.45);
     }
 
     @media (max-width: 1024px) {
@@ -1558,7 +1574,10 @@
       </div>
       <div class="quotes-grid">
         <div class="quote-card fade-up">
-          <div class="quote-mark">"</div>
+          <div class="quote-top">
+            <span class="quote-role-top">Magic Labs</span>
+            <div class="quote-mark">"</div>
+          </div>
           <p class="quote-text">Flowra represents an important step forward for Solana. Decentralization is not just about validator count but about whether validators have real infrastructure choice. By reopening transaction flow through its Open Orderflow Auction and enabling Programmable Block Policies, Flowra reduces dependence on closed systems and introduces more transparent competition for blockspace, making the ecosystem stronger, more open and more resilient.</p>
           <div class="quote-author">
             <span class="quote-name">Jaemin</span>
@@ -1566,7 +1585,10 @@
           </div>
         </div>
         <div class="quote-card fade-up">
-          <div class="quote-mark">"</div>
+          <div class="quote-top">
+            <span class="quote-role-top">Binance</span>
+            <div class="quote-mark">"</div>
+          </div>
           <p class="quote-text">At its core, Flowra is competing for one of Solana's most valuable assets — order flow itself with the goal of making transaction ordering more transparent, competitive and economically aligned across the ecosystem.</p>
           <div class="quote-author">
             <span class="quote-name">Terry</span>
@@ -1574,7 +1596,10 @@
           </div>
         </div>
         <div class="quote-card fade-up">
-          <div class="quote-mark">"</div>
+          <div class="quote-top">
+            <span class="quote-role-top">Sei Labs</span>
+            <div class="quote-mark">"</div>
+          </div>
           <p class="quote-text">Flowra is building the validator-aligned MEV layer Solana needs, turning orderflow competition into higher validator revenue and a more efficient blockspace market.</p>
           <div class="quote-author">
             <span class="quote-name">Johnny</span>
