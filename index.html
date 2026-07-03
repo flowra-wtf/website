@@ -1157,6 +1157,95 @@
       border-color: rgba(241,86,27,0.2);
     }
 
+    /* ── TESTIMONIALS ── */
+    .quotes {
+      background: var(--dark-2);
+      border-top: 1px solid rgba(242,238,233,0.06);
+    }
+
+    .quotes-header {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 64px;
+    }
+
+    .quotes-header h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: clamp(28px, 3.4vw, 44px);
+      text-transform: uppercase;
+      color: var(--cream);
+    }
+
+    .quotes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      align-items: stretch;
+    }
+
+    .quote-card {
+      background: rgba(242,238,233,0.03);
+      border: 1px solid rgba(242,238,233,0.07);
+      padding: 40px 36px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: background 0.3s, border-color 0.3s;
+    }
+
+    .quote-card:hover {
+      background: rgba(241,86,27,0.04);
+      border-color: rgba(241,86,27,0.18);
+    }
+
+    .quote-mark {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 64px;
+      font-weight: 900;
+      color: var(--orange);
+      line-height: 0.6;
+      margin-bottom: 24px;
+      opacity: 0.8;
+    }
+
+    .quote-text {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.8;
+      color: rgba(242,238,233,0.65);
+      flex: 1;
+      margin-bottom: 28px;
+    }
+
+    .quote-author {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(242,238,233,0.08);
+    }
+
+    .quote-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 17px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--cream);
+    }
+
+    .quote-role {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--orange);
+    }
+
+    @media (max-width: 1024px) {
+      .quotes-grid { grid-template-columns: 1fr; }
+    }
+
   </style>
 </head>
 <body>
@@ -1455,6 +1544,42 @@
             <li>Compete on the quality of your strategy, not your connections</li>
             <li>Atomic bundle execution with conflict-aware selection</li>
           </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="quotes">
+    <div class="section-inner">
+      <div class="quotes-header">
+        <div class="section-label" style="justify-content: center;">What People Are Saying</div>
+        <h2>Backed by Builders Who Get It</h2>
+      </div>
+      <div class="quotes-grid">
+        <div class="quote-card fade-up">
+          <div class="quote-mark">"</div>
+          <p class="quote-text">Flowra represents an important step forward for Solana. Decentralization is not just about validator count but about whether validators have real infrastructure choice. By reopening transaction flow through its Open Orderflow Auction and enabling Programmable Block Policies, Flowra reduces dependence on closed systems and introduces more transparent competition for blockspace, making the ecosystem stronger, more open and more resilient.</p>
+          <div class="quote-author">
+            <span class="quote-name">Jaemin</span>
+            <span class="quote-role">Cofounder of Magic Labs</span>
+          </div>
+        </div>
+        <div class="quote-card fade-up">
+          <div class="quote-mark">"</div>
+          <p class="quote-text">At its core, Flowra is competing for one of Solana's most valuable assets — order flow itself with the goal of making transaction ordering more transparent, competitive and economically aligned across the ecosystem.</p>
+          <div class="quote-author">
+            <span class="quote-name">Terry</span>
+            <span class="quote-role">Binance</span>
+          </div>
+        </div>
+        <div class="quote-card fade-up">
+          <div class="quote-mark">"</div>
+          <p class="quote-text">Flowra is building the validator-aligned MEV layer Solana needs, turning orderflow competition into higher validator revenue and a more efficient blockspace market.</p>
+          <div class="quote-author">
+            <span class="quote-name">Johnny</span>
+            <span class="quote-role">Sei Labs & ex-Circle</span>
+          </div>
         </div>
       </div>
     </div>
