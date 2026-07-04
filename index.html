@@ -1177,45 +1177,47 @@
       color: var(--cream);
     }
 
-    .quotes-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-      align-items: stretch;
+    .quotes-slider-wrap {
+      position: relative;
     }
 
-    .quote-role-top {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 20px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--orange);
-      padding-top: 6px;
+    .quotes-grid {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      padding-bottom: 8px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      cursor: grab;
+      user-select: none;
     }
+
+    .quotes-grid::-webkit-scrollbar { display: none; }
 
     .quote-card {
       background: var(--cream);
       border: 1px solid rgba(242,238,233,0.9);
-      padding: 36px 26px;
+      padding: 44px 48px;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      text-align: center;
+      justify-content: center;
       position: relative;
-      transition: transform 0.3s, box-shadow 0.3s;
+      transition: box-shadow 0.3s;
+      flex: 0 0 560px;
+      max-width: 90%;
+      scroll-snap-align: start;
     }
 
     .quote-card:hover {
-      transform: translateY(-3px);
       box-shadow: 0 14px 36px rgba(0,0,0,0.3);
     }
 
     .quote-top {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 16px;
+      align-items: flex-start;
+      justify-content: space-between;
       margin-bottom: 24px;
     }
 
@@ -1223,6 +1225,8 @@
       height: 26px;
       max-width: 140px;
       object-fit: contain;
+      object-position: left center;
+      padding-top: 4px;
     }
 
     .quote-mark {
@@ -1235,20 +1239,25 @@
     }
 
     .quote-text {
-      font-size: 15px;
+      font-size: 16.5px;
       font-weight: 400;
-      line-height: 1.85;
+      line-height: 1.95;
       color: rgba(5,22,27,0.88);
       flex: 1;
       margin-bottom: 28px;
       display: flex;
-      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .quote-text p {
+      margin: 0;
     }
 
     .quote-author {
       display: flex;
       flex-direction: column;
-      align-items: center;
       gap: 3px;
       padding-top: 20px;
       border-top: 1px solid rgba(5,22,27,0.12);
@@ -1271,12 +1280,35 @@
       color: var(--orange);
     }
 
-    @media (max-width: 1280px) {
-      .quotes-grid { grid-template-columns: repeat(2, 1fr); }
+    .quotes-nav {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
+      margin-bottom: 24px;
+    }
+
+    .quotes-nav button {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(242,238,233,0.3);
+      background: transparent;
+      color: var(--cream);
+      font-size: 18px;
+      cursor: pointer;
+      transition: all 0.25s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .quotes-nav button:hover {
+      border-color: var(--orange);
+      color: var(--orange);
     }
 
     @media (max-width: 700px) {
-      .quotes-grid { grid-template-columns: 1fr; }
+      .quote-card { flex: 0 0 85%; padding: 32px 26px; }
     }
 
     /* ── PBP ── */
@@ -1735,7 +1767,6 @@
   <section class="partners">
     <div class="section-inner">
       <div class="partners-header">
-        <div class="section-label" style="justify-content: center;">Partnerships</div>
         <h2>Working Alongside the Ecosystem</h2>
         <p>Flowra collaborates with validators, infrastructure providers, and teams across Solana to build a more open orderflow market.</p>
       </div>
@@ -1754,13 +1785,18 @@
         <div class="section-label" style="justify-content: center;">Angel &amp; Advisor</div>
         <h2>Backed by Builders Who Get It</h2>
       </div>
-      <div class="quotes-grid">
+      <div class="quotes-slider-wrap">
+        <div class="quotes-nav">
+          <button type="button" onclick="slideQuotes(-1)" aria-label="Previous">←</button>
+          <button type="button" onclick="slideQuotes(1)" aria-label="Next">→</button>
+        </div>
+        <div class="quotes-grid" id="quotes-slider">
         <div class="quote-card fade-up">
           <div class="quote-top">
             <img src="quote-magic.svg" alt="Magic Labs" class="quote-logo">
             <div class="quote-mark">"</div>
           </div>
-          <p class="quote-text">Flowra represents an important step forward for Solana. Decentralization is not just about validator count but about whether validators have real infrastructure choice. By reopening transaction flow through its Open Orderflow Auction and enabling Programmable Block Policies, Flowra reduces dependence on closed systems and introduces more transparent competition for blockspace, making the ecosystem stronger, more open and more resilient.</p>
+          <div class="quote-text"><p>Flowra represents an important step forward for Solana. Decentralization is not just about validator count but about whether validators have real infrastructure choice.</p><p>By reopening transaction flow through its Open Orderflow Auction and enabling Programmable Block Policies, Flowra reduces dependence on closed systems and introduces more transparent competition for blockspace, making the ecosystem stronger, more open and more resilient.</p></div>
           <div class="quote-author">
             <span class="quote-name">Jaemin</span>
             <span class="quote-role">Cofounder of Magic Labs</span>
@@ -1771,7 +1807,7 @@
             <img src="quote-binance.svg" alt="Binance" class="quote-logo">
             <div class="quote-mark">"</div>
           </div>
-          <p class="quote-text">At its core, Flowra is competing for one of Solana's most valuable assets — order flow itself with the goal of making transaction ordering more transparent, competitive and economically aligned across the ecosystem.</p>
+          <div class="quote-text"><p>At its core, Flowra is competing for one of Solana's most valuable assets — order flow itself with the goal of making transaction ordering more transparent, competitive and economically aligned across the ecosystem.</p></div>
           <div class="quote-author">
             <span class="quote-name">Terry</span>
             <span class="quote-role">Binance</span>
@@ -1782,7 +1818,7 @@
             <img src="quote-sei.svg" alt="Sei Labs" class="quote-logo">
             <div class="quote-mark">"</div>
           </div>
-          <p class="quote-text">Flowra is building the validator-aligned MEV layer Solana needs, turning orderflow competition into higher validator revenue and a more efficient blockspace market.</p>
+          <div class="quote-text"><p>Flowra is building the validator-aligned MEV layer Solana needs, turning orderflow competition into higher validator revenue and a more efficient blockspace market.</p></div>
           <div class="quote-author">
             <span class="quote-name">Johnny</span>
             <span class="quote-role">Sei Labs & ex-Circle</span>
@@ -1793,12 +1829,13 @@
             <img src="quote-factblock.png" alt="FACTBLOCK" class="quote-logo">
             <div class="quote-mark">"</div>
           </div>
-          <p class="quote-text">MEV has become a major source of validator revenue but it has also concentrated parts of Solana's transaction supply chain among a few infrastructure providers. As the ecosystem matures, healthy competition is critical to preserving validator choice and driving innovation. Flowra is helping push this forward by building open infrastructure that expands validator optionality and strengthens the transaction marketplace.</p>
+          <div class="quote-text"><p>MEV has become a major source of validator revenue but it has also concentrated parts of Solana's transaction supply chain among a few infrastructure providers. As the ecosystem matures, healthy competition is critical to preserving validator choice and driving innovation.</p><p>Flowra is helping push this forward by building open infrastructure that expands validator optionality and strengthens the transaction marketplace.</p></div>
           <div class="quote-author">
             <span class="quote-name">Will</span>
             <span class="quote-role">FACTBLOCK</span>
           </div>
         </div>
+      </div>
       </div>
     </div>
   </section>
@@ -1852,6 +1889,54 @@
   </footer>
 
   <script>
+    function slideQuotes(dir) {
+      const slider = document.getElementById('quotes-slider');
+      const card = slider.querySelector('.quote-card');
+      const step = card.offsetWidth + 20;
+      slider.scrollBy({ left: dir * step, behavior: 'smooth' });
+    }
+
+    // Mouse drag to slide
+    (function() {
+      const slider = document.getElementById('quotes-slider');
+      if (!slider) return;
+      let isDown = false, startX = 0, scrollStart = 0, moved = false;
+
+      slider.addEventListener('mousedown', (e) => {
+        isDown = true;
+        moved = false;
+        startX = e.pageX;
+        scrollStart = slider.scrollLeft;
+        slider.style.cursor = 'grabbing';
+        slider.style.scrollSnapType = 'none';
+        slider.style.scrollBehavior = 'auto';
+      });
+
+      window.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        const dx = e.pageX - startX;
+        if (Math.abs(dx) > 5) moved = true;
+        slider.scrollLeft = scrollStart - dx;
+      });
+
+      window.addEventListener('mouseup', () => {
+        if (!isDown) return;
+        isDown = false;
+        slider.style.cursor = 'grab';
+        slider.style.scrollBehavior = 'smooth';
+        // Snap to nearest card
+        const card = slider.querySelector('.quote-card');
+        const step = card.offsetWidth + 20;
+        const target = Math.round(slider.scrollLeft / step) * step;
+        slider.scrollTo({ left: target, behavior: 'smooth' });
+        setTimeout(() => { slider.style.scrollSnapType = 'x mandatory'; }, 400);
+      });
+
+      // Prevent link/text selection while dragging
+      slider.addEventListener('click', (e) => {
+        if (moved) { e.preventDefault(); e.stopPropagation(); }
+      }, true);
+    })();
     // Intersection Observer for scroll animations
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
