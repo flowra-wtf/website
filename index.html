@@ -1179,8 +1179,8 @@
 
     .quotes-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
       align-items: stretch;
     }
 
@@ -1197,7 +1197,7 @@
     .quote-card {
       background: var(--cream);
       border: 1px solid rgba(242,238,233,0.9);
-      padding: 44px 40px;
+      padding: 36px 26px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -1271,7 +1271,11 @@
       color: var(--orange);
     }
 
-    @media (max-width: 1024px) {
+    @media (max-width: 1280px) {
+      .quotes-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 700px) {
       .quotes-grid { grid-template-columns: 1fr; }
     }
 
