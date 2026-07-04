@@ -405,7 +405,7 @@
 
     .pillars {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 2px;
     }
 
@@ -1179,67 +1179,80 @@
 
     .quotes-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
       align-items: stretch;
-    }
-
-    .quote-card {
-      background: rgba(242,238,233,0.03);
-      border: 1px solid rgba(242,238,233,0.07);
-      padding: 40px 36px;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      transition: background 0.3s, border-color 0.3s;
-    }
-
-    .quote-card:hover {
-      background: rgba(241,86,27,0.04);
-      border-color: rgba(241,86,27,0.18);
-    }
-
-    .quote-top {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      margin-bottom: 24px;
     }
 
     .quote-role-top {
       font-family: 'Barlow Condensed', sans-serif;
-      font-size: 18px;
+      font-size: 20px;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: var(--orange);
-      padding-top: 8px;
+      padding-top: 6px;
+    }
+
+    .quote-card {
+      background: var(--cream);
+      border: 1px solid rgba(242,238,233,0.9);
+      padding: 44px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .quote-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 36px rgba(0,0,0,0.3);
+    }
+
+    .quote-top {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .quote-logo {
+      height: 26px;
+      max-width: 140px;
+      object-fit: contain;
     }
 
     .quote-mark {
       font-family: 'Barlow Condensed', sans-serif;
-      font-size: 64px;
+      font-size: 56px;
       font-weight: 900;
       color: var(--orange);
       line-height: 0.6;
-      opacity: 0.5;
+      opacity: 0.85;
     }
 
     .quote-text {
       font-size: 15px;
       font-weight: 400;
       line-height: 1.85;
-      color: rgba(242,238,233,0.95);
+      color: rgba(5,22,27,0.88);
       flex: 1;
       margin-bottom: 28px;
+      display: flex;
+      align-items: center;
     }
 
     .quote-author {
       display: flex;
       flex-direction: column;
+      align-items: center;
       gap: 3px;
       padding-top: 20px;
-      border-top: 1px solid rgba(242,238,233,0.12);
+      border-top: 1px solid rgba(5,22,27,0.12);
+      width: 100%;
     }
 
     .quote-name {
@@ -1248,18 +1261,117 @@
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.04em;
-      color: var(--cream);
+      color: var(--dark);
     }
 
     .quote-role {
       font-size: 13px;
-      font-weight: 500;
+      font-weight: 600;
       letter-spacing: 0.04em;
-      color: rgba(242,238,233,0.45);
+      color: var(--orange);
     }
 
     @media (max-width: 1024px) {
       .quotes-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── PBP ── */
+    .pbp {
+      background: var(--dark);
+      border-top: 1px solid rgba(242,238,233,0.06);
+    }
+
+    .pbp-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+      margin-bottom: 64px;
+    }
+
+    .pbp-left h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: clamp(36px, 4vw, 58px);
+      text-transform: uppercase;
+      line-height: 1.0;
+      color: var(--cream);
+      margin-bottom: 28px;
+    }
+
+    .pbp-left h2 span {
+      color: var(--orange);
+    }
+
+    .pbp-lead {
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.8;
+      color: rgba(242,238,233,0.6);
+      margin-bottom: 16px;
+    }
+
+    .pbp-features {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .pbp-item {
+      background: rgba(242,238,233,0.03);
+      border: 1px solid rgba(242,238,233,0.07);
+      padding: 28px 32px;
+      transition: background 0.3s, border-color 0.3s;
+    }
+
+    .pbp-item:hover {
+      background: rgba(241,86,27,0.05);
+      border-color: rgba(241,86,27,0.2);
+    }
+
+    .pbp-item h4 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 18px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--cream);
+      margin-bottom: 10px;
+    }
+
+    .pbp-item p {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.75;
+      color: rgba(242,238,233,0.55);
+    }
+
+    .ethical-mev {
+      border: 1px solid rgba(241,86,27,0.25);
+      background: rgba(241,86,27,0.04);
+      padding: 48px;
+    }
+
+    .ethical-mev h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(24px, 2.6vw, 34px);
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--cream);
+      margin-bottom: 18px;
+    }
+
+    .ethical-mev p {
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.85;
+      color: rgba(242,238,233,0.65);
+      max-width: 900px;
+    }
+
+    @media (max-width: 1024px) {
+      .pbp-grid { grid-template-columns: 1fr; gap: 40px; }
+      .ethical-mev { padding: 32px 24px; }
     }
 
   </style>
@@ -1294,7 +1406,7 @@
       <div class="hero-tag">Open Orderflow Auction · Solana</div>
       <h1><em>O</em>pen<br><em>O</em>rderflow<br><em>A</em>uction</h1>
       <p class="hero-sub">
-        MEV and priority fees flow through channels that are hard to see and harder to access. Flowra brings them into the open — creating a transparent auction where validators, users, and searchers all participate on equal footing.
+        MEV and priority fees flow through channels that are hard to see and harder to access. Flowra brings them into the open with a transparent, compliance-grade auction built for validators, institutions, and users on equal footing.
       </p>
     </div>
   </section>
@@ -1381,7 +1493,7 @@
             <line x1="22" y1="8" x2="22" y2="36" stroke="#F1561B" stroke-width="1" opacity="0.5"/>
           </svg>
           <h3>MEV Redistribution</h3>
-          <p>MEV opportunities are auctioned openly, and a portion of the proceeds flows back to the users who originated the transactions — inspired by Ethereum's MEV-Share.</p>
+          <p>MEV opportunities are auctioned openly, and a portion of the proceeds flows back to the users who originated the transactions, an approach inspired by Ethereum's MEV-Share.</p>
         </div>
         <div class="pillar fade-up">
           <svg class="pillar-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1392,7 +1504,7 @@
             <circle cx="22" cy="24" r="2" fill="#F1561B"/>
           </svg>
           <h3>Validator Flexibility</h3>
-          <p>Validators can choose their own terms and select from multiple auction participants — giving them more options and greater control over how they engage with the ecosystem.</p>
+          <p>Validators can choose their own terms and select from multiple auction participants, giving them more options and greater control over how they engage with the ecosystem.</p>
         </div>
         <div class="pillar fade-up">
           <svg class="pillar-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1404,7 +1516,57 @@
             <line x1="34" y1="16" x2="34" y2="28" stroke="#F1561B" stroke-width="1" opacity="0.4"/>
           </svg>
           <h3>Open Participation</h3>
-          <p>The orderflow stream is standardized and accessible through an open API — welcoming a wider range of searchers to participate and contribute to a healthier market.</p>
+          <p>The orderflow stream is standardized and accessible through an open API, welcoming a wider range of searchers to participate and contribute to a healthier market.</p>
+        </div>
+        <div class="pillar fade-up">
+          <svg class="pillar-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22 6 L36 12 V22 C36 30 30 36 22 39 C14 36 8 30 8 22 V12 Z" stroke="#F1561B" stroke-width="1.2" opacity="0.5"/>
+            <path d="M16 22 L20 26 L29 17" stroke="#F1561B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <h3>Compliance by Design</h3>
+          <p>Built with institutions in mind. Sanctions screening, AML support, and policy controls are part of the infrastructure itself, not an afterthought.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PBP -->
+  <section class="pbp" id="pbp">
+    <div class="section-inner">
+      <div class="pbp-grid">
+        <div class="pbp-left">
+          <div class="section-label">Programmable Block Policy</div>
+          <h2>Compliance,<br><span>Built Into the Block</span></h2>
+          <p class="pbp-lead">
+            Programmable Block Policy (PBP) lets validators enforce the policies financial institutions require, such as sanctions screening, AML requirements, and custom bundle restrictions, directly at the infrastructure layer.
+          </p>
+          <p class="pbp-lead">
+            These policies belong to the validator, not to Flowra. Each validator retains full control over how their blocks are built, giving institutions the confidence to participate on their own terms.
+          </p>
+        </div>
+        <div class="pbp-features">
+          <div class="pbp-item fade-up">
+            <h4>Sanctions & AML Screening</h4>
+            <p>Validators can enforce compliance policies required by financial institutions. Screening capabilities are part of the infrastructure, ready from day one.</p>
+          </div>
+          <div class="pbp-item fade-up">
+            <h4>Harmful MEV Mitigation</h4>
+            <p>PBP is designed to prevent single-bundle sandwich attacks by default, with protections continuously expanding to cover more sophisticated forms of predatory MEV.</p>
+          </div>
+          <div class="pbp-item fade-up">
+            <h4>Validator-Owned Policies</h4>
+            <p>From compliance requirements to bundle restrictions and operational preferences, every policy belongs to the validator. No single provider decides how blocks should be built.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ethical-mev fade-up">
+        <div class="ethical-mev-inner">
+          <div class="section-label">Our Stance on MEV</div>
+          <h3>Shape It, Don't Hide It</h3>
+          <p>
+            MEV is a natural byproduct of blockchain design, and attempts to eliminate it entirely often just drive it into less transparent channels. Beneficial forms like atomic arbitrage, liquidations, and healthy back-running improve market efficiency and contribute to price discovery. Flowra's approach preserves those mechanisms while systematically reducing extractive behavior that comes at the expense of users. Transparency, compliance, and healthy market dynamics should reinforce one another instead of competing.
+          </p>
         </div>
       </div>
     </div>
@@ -1416,7 +1578,7 @@
       <div class="how-header">
         <div class="section-label" style="justify-content: center;">How It Works</div>
         <h2>From Transaction to Block</h2>
-        <p>Flowra connects pending transactions to an open stream of competing searchers, and routes the best bundles into the block — all within Solana's natural block cadence.</p>
+        <p>Flowra connects pending transactions to an open stream of competing searchers, and routes the best bundles into the block, all within Solana's natural block cadence.</p>
       </div>
 
       <div class="flow-steps">
@@ -1428,7 +1590,7 @@
         <div class="flow-step fade-up">
           <div class="flow-step-num">02</div>
           <h4>Open<br>Stream</h4>
-          <p>Transactions are deduplicated and broadcast to all searchers in a standardized gRPC stream — no private access required.</p>
+          <p>Transactions are deduplicated and broadcast to all searchers in a standardized gRPC stream, with no private access required.</p>
         </div>
         <div class="flow-step fade-up">
           <div class="flow-step-num">03</div>
@@ -1456,7 +1618,7 @@
       <div class="staking-header">
         <div class="section-label">Why It Matters</div>
         <h2>Better Returns for Stakers.<br>A Healthier Ecosystem.</h2>
-        <p>When orderflow moves through an open auction, the benefits don't stay with infrastructure providers — they flow through to the people who actually secure and use the network.</p>
+        <p>When orderflow moves through an open auction, the benefits don't stay with infrastructure providers. They flow through to the people who actually secure and use the network.</p>
       </div>
 
       <div class="staking-grid">
@@ -1471,7 +1633,7 @@
             </div>
             <h3>Staking APR Goes Up</h3>
             <p>
-              When more searchers compete openly for the same orderflow, the tips they pay to validators naturally increase. Those tips feed directly into validator revenue — which is what determines staking yields for everyone who has SOL staked.
+              When more searchers compete openly for the same orderflow, the tips they pay to validators naturally increase. Those tips feed directly into validator revenue, which is what determines staking yields for everyone who has SOL staked.
             </p>
             <p>
               Flowra's open auction is designed to attract a broader pool of searchers, intensifying competition and passing the upside along to validators and their delegators.
@@ -1488,12 +1650,12 @@
           <div class="staking-stat fade-up">
             <div class="stat-label">Historical peak</div>
             <div class="stat-value">~3.5%</div>
-            <div class="stat-desc">At peak market activity, tips APY reached 3.5% — showing the potential when competition is more active.</div>
+            <div class="stat-desc">At peak market activity, tips APY reached 3.5%, showing the potential when competition is more active.</div>
           </div>
           <div class="staking-stat staking-stat--highlight fade-up">
             <div class="stat-label">Flowra's goal</div>
             <div class="stat-value">Open market</div>
-            <div class="stat-desc">More searchers, more competition, better tip outcomes — and a meaningful improvement in total staking returns.</div>
+            <div class="stat-desc">More searchers, more competition, better tip outcomes, and a meaningful improvement in total staking returns.</div>
           </div>
         </div>
       </div>
@@ -1512,7 +1674,7 @@
         <div class="ecosystem-item fade-up">
           <div class="ecosystem-num">03</div>
           <h4>Users get value back</h4>
-          <p>MEV proceeds that once disappeared into private channels are returned — partially — to the users who created them.</p>
+          <p>MEV proceeds that once disappeared into private channels are partially returned to the users who created them.</p>
         </div>
         <div class="ecosystem-item fade-up">
           <div class="ecosystem-num">04</div>
@@ -1556,55 +1718,10 @@
           <h3>Open Stream.<br>Level Playing Field.</h3>
           <ul class="benefit-list">
             <li>Access the orderflow stream with a standard API key</li>
-            <li>Standardized gRPC feed — easy to build on</li>
+            <li>Standardized gRPC feed that's easy to build on</li>
             <li>Compete on the quality of your strategy, not your connections</li>
             <li>Atomic bundle execution with conflict-aware selection</li>
           </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS -->
-  <section class="quotes">
-    <div class="section-inner">
-      <div class="quotes-header">
-        <div class="section-label" style="justify-content: center;">What People Are Saying</div>
-        <h2>Backed by Builders Who Get It</h2>
-      </div>
-      <div class="quotes-grid">
-        <div class="quote-card fade-up">
-          <div class="quote-top">
-            <span class="quote-role-top">Magic Labs</span>
-            <div class="quote-mark">"</div>
-          </div>
-          <p class="quote-text">Flowra represents an important step forward for Solana. Decentralization is not just about validator count but about whether validators have real infrastructure choice. By reopening transaction flow through its Open Orderflow Auction and enabling Programmable Block Policies, Flowra reduces dependence on closed systems and introduces more transparent competition for blockspace, making the ecosystem stronger, more open and more resilient.</p>
-          <div class="quote-author">
-            <span class="quote-name">Jaemin</span>
-            <span class="quote-role">Cofounder of Magic Labs</span>
-          </div>
-        </div>
-        <div class="quote-card fade-up">
-          <div class="quote-top">
-            <span class="quote-role-top">Binance</span>
-            <div class="quote-mark">"</div>
-          </div>
-          <p class="quote-text">At its core, Flowra is competing for one of Solana's most valuable assets — order flow itself with the goal of making transaction ordering more transparent, competitive and economically aligned across the ecosystem.</p>
-          <div class="quote-author">
-            <span class="quote-name">Terry</span>
-            <span class="quote-role">Binance</span>
-          </div>
-        </div>
-        <div class="quote-card fade-up">
-          <div class="quote-top">
-            <span class="quote-role-top">Sei Labs</span>
-            <div class="quote-mark">"</div>
-          </div>
-          <p class="quote-text">Flowra is building the validator-aligned MEV layer Solana needs, turning orderflow competition into higher validator revenue and a more efficient blockspace market.</p>
-          <div class="quote-author">
-            <span class="quote-name">Johnny</span>
-            <span class="quote-role">Sei Labs & ex-Circle</span>
-          </div>
         </div>
       </div>
     </div>
@@ -1626,13 +1743,69 @@
     </div>
   </section>
 
+  <!-- TESTIMONIALS -->
+  <section class="quotes">
+    <div class="section-inner">
+      <div class="quotes-header">
+        <div class="section-label" style="justify-content: center;">Angel &amp; Advisor</div>
+        <h2>Backed by Builders Who Get It</h2>
+      </div>
+      <div class="quotes-grid">
+        <div class="quote-card fade-up">
+          <div class="quote-top">
+            <img src="quote-magic.svg" alt="Magic Labs" class="quote-logo">
+            <div class="quote-mark">"</div>
+          </div>
+          <p class="quote-text">Flowra represents an important step forward for Solana. Decentralization is not just about validator count but about whether validators have real infrastructure choice. By reopening transaction flow through its Open Orderflow Auction and enabling Programmable Block Policies, Flowra reduces dependence on closed systems and introduces more transparent competition for blockspace, making the ecosystem stronger, more open and more resilient.</p>
+          <div class="quote-author">
+            <span class="quote-name">Jaemin</span>
+            <span class="quote-role">Cofounder of Magic Labs</span>
+          </div>
+        </div>
+        <div class="quote-card fade-up">
+          <div class="quote-top">
+            <img src="quote-binance.svg" alt="Binance" class="quote-logo">
+            <div class="quote-mark">"</div>
+          </div>
+          <p class="quote-text">At its core, Flowra is competing for one of Solana's most valuable assets — order flow itself with the goal of making transaction ordering more transparent, competitive and economically aligned across the ecosystem.</p>
+          <div class="quote-author">
+            <span class="quote-name">Terry</span>
+            <span class="quote-role">Binance</span>
+          </div>
+        </div>
+        <div class="quote-card fade-up">
+          <div class="quote-top">
+            <img src="quote-sei.svg" alt="Sei Labs" class="quote-logo">
+            <div class="quote-mark">"</div>
+          </div>
+          <p class="quote-text">Flowra is building the validator-aligned MEV layer Solana needs, turning orderflow competition into higher validator revenue and a more efficient blockspace market.</p>
+          <div class="quote-author">
+            <span class="quote-name">Johnny</span>
+            <span class="quote-role">Sei Labs & ex-Circle</span>
+          </div>
+        </div>
+        <div class="quote-card fade-up">
+          <div class="quote-top">
+            <img src="quote-factblock.png" alt="FACTBLOCK" class="quote-logo">
+            <div class="quote-mark">"</div>
+          </div>
+          <p class="quote-text">MEV has become a major source of validator revenue but it has also concentrated parts of Solana's transaction supply chain among a few infrastructure providers. As the ecosystem matures, healthy competition is critical to preserving validator choice and driving innovation. Flowra is helping push this forward by building open infrastructure that expands validator optionality and strengthens the transaction marketplace.</p>
+          <div class="quote-author">
+            <span class="quote-name">Will</span>
+            <span class="quote-role">FACTBLOCK</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section class="cta-section">
     <video class="section-bg-video" autoplay muted loop playsinline>
       <source src="bg-cta.webm" type="video/webm">
     </video>
     <h2>A Better Orderflow<br>Auction for<br>Solana.</h2>
-    <p>Flowra is working toward a more transparent and accessible MEV ecosystem — one that works a little better for everyone involved.</p>
+    <p>Flowra is working toward a more transparent and accessible MEV ecosystem that works a little better for everyone involved.</p>
     <a href="#" onclick="this.href='mai'+'lto:'+'info'+'@'+'flowra.wtf'" class="btn-primary">Get in touch →</a>
   </section>
 
