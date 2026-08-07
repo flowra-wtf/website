@@ -386,6 +386,52 @@
       .blog-grid { grid-template-columns: 1fr; }
       footer { padding: 48px 20px 32px; }
     }
+    .blog-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 40px;
+      border-bottom: 1px solid rgba(242,238,233,0.1);
+    }
+
+    .blog-tab {
+      background: transparent;
+      border: none;
+      padding: 12px 20px 14px;
+      font-family: 'Barlow', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: rgba(242,238,233,0.45);
+      cursor: pointer;
+      position: relative;
+      transition: color 0.25s;
+    }
+
+    .blog-tab::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--orange);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .blog-tab:hover { color: var(--cream); }
+
+    .blog-tab.active {
+      color: var(--orange);
+    }
+
+    .blog-tab.active::after {
+      transform: scaleX(1);
+    }
+
+    .blog-card.hidden { display: none; }
+
   </style>
 </head>
 <body>
@@ -413,11 +459,89 @@
     <p>Notes on the orderflow market, technical deep-dives, and updates from the Flowra team.</p>
   </div>
 
-  <!-- BLOG GRID -->
+  <!-- BLOG TABS -->
   <div class="blog-section">
+    <div class="blog-tabs">
+      <button class="blog-tab active" data-filter="all" onclick="filterBlog('all', this)">All</button>
+      <button class="blog-tab" data-filter="flowra" onclick="filterBlog('flowra', this)">From Flowra</button>
+      <button class="blog-tab" data-filter="news" onclick="filterBlog('news', this)">In the News</button>
+    </div>
     <div class="blog-grid" id="blog-grid">
 
-      <a href="https://decrypt.co/374724/flowra-and-honeypot-partner-to-bring-sanctions-screening-directly-to-solana-block-building" class="blog-card fade-up" target="_blank" rel="noopener">
+      <a href="https://x.com/Flowra_sol/status/2085264939678339194" class="blog-card fade-up" data-group="flowra" target="_blank" rel="noopener">
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span>Flowra Article</span>
+            <span class="dot"></span>
+            <span class="date">Aug 6, 2026</span>
+          </div>
+          <h3>Why Institutions Cannot Run Solana Validators Yet... YET</h3>
+          <p>Institutional capital arrived on Solana before the infrastructure did. A look at the missing compliance layer between institutional obligation and validator operation, and how Programmable Block Policy fills it.</p>
+          <div class="blog-card-read">
+            Read on X
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://x.com/Flowra_sol/status/2084203780909019220" class="blog-card fade-up" data-group="flowra" target="_blank" rel="noopener">
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span>Flowra Article</span>
+            <span class="dot"></span>
+            <span class="date">Aug 3, 2026</span>
+          </div>
+          <h3>What Is an Open Orderflow Auction?</h3>
+          <p>Every blockchain has a hidden market inside it. A primer on Solana's orderflow market, what closed access costs validators and stakers, and how an open auction changes the economics.</p>
+          <div class="blog-card-read">
+            Read on X
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+
+      <a href="https://markets.businessinsider.com/news/currencies/flowra-and-honeypot-partner-to-bring-sanctions-screening-directly-to-solana-block-building-1036386003" class="blog-card fade-up" data-group="news" target="_blank" rel="noopener">
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span>Press</span>
+            <span class="dot"></span>
+            <span class="date">Jul 30, 2026</span>
+          </div>
+          <h3>Flowra and Honeypot Partner to Bring Sanctions Screening Directly to Solana Block-Building</h3>
+          <p>Business Insider Markets covers the partnership integrating sanctions and risk screening into Solana block construction, bringing institutional-grade compliance controls to validator infrastructure.</p>
+          <div class="blog-card-read">
+            Read on Business Insider
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://techbriefly.com/2026/07/30/flowra-and-honeypot-partner-to-bring-sanctions-screening-directly-to-solana-block-building/" class="blog-card fade-up" data-group="news" target="_blank" rel="noopener">
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span>Press</span>
+            <span class="dot"></span>
+            <span class="date">Jul 30, 2026</span>
+          </div>
+          <h3>Flowra and Honeypot Partner to Bring Sanctions Screening Directly to Solana Block-Building</h3>
+          <p>TechBriefly reports on the partnership embedding configurable sanctions and risk screening into Solana's block-building layer through Flowra's Programmable Block Policy.</p>
+          <div class="blog-card-read">
+            Read on TechBriefly
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://decrypt.co/374724/flowra-and-honeypot-partner-to-bring-sanctions-screening-directly-to-solana-block-building" class="blog-card fade-up" data-group="news" target="_blank" rel="noopener">
         <div class="blog-card-body">
           <div class="blog-card-meta">
             <span>Press</span>
@@ -435,7 +559,7 @@
         </div>
       </a>
 
-      <a href="https://chainwire.org/2026/07/30/flowra-and-honeypot-partner-to-bring-sanctions-screening-directly-to-solana-block-building/" class="blog-card fade-up" target="_blank" rel="noopener">
+      <a href="https://chainwire.org/2026/07/30/flowra-and-honeypot-partner-to-bring-sanctions-screening-directly-to-solana-block-building/" class="blog-card fade-up" data-group="news" target="_blank" rel="noopener">
         <div class="blog-card-body">
           <div class="blog-card-meta">
             <span>Press</span>
@@ -453,7 +577,7 @@
         </div>
       </a>
 
-      <a href="https://cryptomode.com/press-releases/flowra-and-honeypot-partner-to-bring-sanctions-screening-directly-to-solana-block-building/" class="blog-card fade-up" target="_blank" rel="noopener">
+      <a href="https://cryptomode.com/press-releases/flowra-and-honeypot-partner-to-bring-sanctions-screening-directly-to-solana-block-building/" class="blog-card fade-up" data-group="news" target="_blank" rel="noopener">
         <div class="blog-card-body">
           <div class="blog-card-meta">
             <span>Press</span>
@@ -471,7 +595,7 @@
         </div>
       </a>
 
-      <a href="https://baffic.com/flowra-and-honeypot-partner-to-bring-sanctions-screening-directly-to-solana-block-building/" class="blog-card fade-up" target="_blank" rel="noopener">
+      <a href="https://baffic.com/flowra-and-honeypot-partner-to-bring-sanctions-screening-directly-to-solana-block-building/" class="blog-card fade-up" data-group="news" target="_blank" rel="noopener">
         <div class="blog-card-body">
           <div class="blog-card-meta">
             <span>Press</span>
@@ -489,7 +613,7 @@
         </div>
       </a>
 
-      <a href="https://www.livebitcoinnews.com/flowra-and-honeypot-partner-to-bring-sanctions-screening-directly-to-solana-block-building/" class="blog-card fade-up" target="_blank" rel="noopener">
+      <a href="https://www.livebitcoinnews.com/flowra-and-honeypot-partner-to-bring-sanctions-screening-directly-to-solana-block-building/" class="blog-card fade-up" data-group="news" target="_blank" rel="noopener">
         <div class="blog-card-body">
           <div class="blog-card-meta">
             <span>Press</span>
@@ -507,7 +631,7 @@
         </div>
       </a>
 
-      <a href="https://coinmarketcap.com/community/articles/6a6b4e58f4dff20aaef8ecac/" class="blog-card fade-up" target="_blank" rel="noopener">
+      <a href="https://coinmarketcap.com/community/articles/6a6b4e58f4dff20aaef8ecac/" class="blog-card fade-up" data-group="news" target="_blank" rel="noopener">
         <div class="blog-card-body">
           <div class="blog-card-meta">
             <span>Press</span>
@@ -525,7 +649,7 @@
         </div>
       </a>
 
-      <a href="https://www.binance.com/en/square/post/350311962924945" class="blog-card fade-up" target="_blank" rel="noopener">
+      <a href="https://www.binance.com/en/square/post/350311962924945" class="blog-card fade-up" data-group="news" target="_blank" rel="noopener">
         <div class="blog-card-body">
           <div class="blog-card-meta">
             <span>Press</span>
@@ -543,7 +667,7 @@
         </div>
       </a>
 
-      <a href="https://bitcoinworld.co.in/solana-validator-infrastructure-adds-compliance-screening-for-institutional-operators/" class="blog-card fade-up" target="_blank" rel="noopener">
+      <a href="https://bitcoinworld.co.in/solana-validator-infrastructure-adds-compliance-screening-for-institutional-operators/" class="blog-card fade-up" data-group="news" target="_blank" rel="noopener">
         <div class="blog-card-body">
           <div class="blog-card-meta">
             <span>Press</span>
@@ -561,7 +685,7 @@
         </div>
       </a>
 
-      <a href="https://financefeeds.com/flowra-and-honeypot-bring-configurable-compliance-controls-to-solanas-block-building-layer/" class="blog-card fade-up" target="_blank" rel="noopener">
+      <a href="https://financefeeds.com/flowra-and-honeypot-bring-configurable-compliance-controls-to-solanas-block-building-layer/" class="blog-card fade-up" data-group="news" target="_blank" rel="noopener">
         <div class="blog-card-body">
           <div class="blog-card-meta">
             <span>Announcement</span>
@@ -579,7 +703,7 @@
         </div>
       </a>
 
-      <a href="https://coinpedia.org/information/solanas-fee-problem-isnt-high-costs-nobody-knows-what-theyre-paying-for/" class="blog-card fade-up" target="_blank" rel="noopener">
+      <a href="https://coinpedia.org/information/solanas-fee-problem-isnt-high-costs-nobody-knows-what-theyre-paying-for/" class="blog-card fade-up" data-group="news" target="_blank" rel="noopener">
         <div class="blog-card-body">
           <div class="blog-card-meta">
             <span>Press</span>
@@ -597,7 +721,7 @@
         </div>
       </a>
 
-      <a href="https://techbullion.com/5-infrastructure-projects-quietly-reshaping-solana-behind-the-scenes/" class="blog-card fade-up" target="_blank" rel="noopener">
+      <a href="https://techbullion.com/5-infrastructure-projects-quietly-reshaping-solana-behind-the-scenes/" class="blog-card fade-up" data-group="news" target="_blank" rel="noopener">
         <div class="blog-card-body">
           <div class="blog-card-meta">
             <span>Press</span>
@@ -615,7 +739,7 @@
         </div>
       </a>
 
-      <a href="https://www.thestreet.com/markets/wall-street-shift-technology-infrastructure" class="blog-card fade-up" target="_blank" rel="noopener">
+      <a href="https://www.thestreet.com/markets/wall-street-shift-technology-infrastructure" class="blog-card fade-up" data-group="news" target="_blank" rel="noopener">
         <div class="blog-card-body">
           <div class="blog-card-meta">
             <span>Press</span>
@@ -633,7 +757,7 @@
         </div>
       </a>
 
-      <a href="https://news.bitcoin.com/harry-hwang-warns-compliant-solana-order-flow-lanes-could-concentrate-institutional-liquidity/" class="blog-card fade-up" target="_blank" rel="noopener">
+      <a href="https://news.bitcoin.com/harry-hwang-warns-compliant-solana-order-flow-lanes-could-concentrate-institutional-liquidity/" class="blog-card fade-up" data-group="news" target="_blank" rel="noopener">
         <div class="blog-card-body">
           <div class="blog-card-meta">
             <span>Interview</span>
@@ -651,7 +775,7 @@
         </div>
       </a>
 
-      <a href="https://hackernoon.com/one-company-runs-95percent-of-solanas-validators-flowras-harry-hwang-is-building-the-open-alternative" class="blog-card fade-up" target="_blank" rel="noopener">
+      <a href="https://hackernoon.com/one-company-runs-95percent-of-solanas-validators-flowras-harry-hwang-is-building-the-open-alternative" class="blog-card fade-up" data-group="news" target="_blank" rel="noopener">
         <div class="blog-card-body">
           <div class="blog-card-meta">
             <span>Interview</span>
@@ -669,7 +793,7 @@
         </div>
       </a>
 
-      <a href="https://www.analyticsinsight.net/blockchain/blockchain-is-risking-becoming-the-centralized-monster-it-was-built-to-defeat" class="blog-card fade-up" target="_blank" rel="noopener">
+      <a href="https://www.analyticsinsight.net/blockchain/blockchain-is-risking-becoming-the-centralized-monster-it-was-built-to-defeat" class="blog-card fade-up" data-group="news" target="_blank" rel="noopener">
         <div class="blog-card-body">
           <div class="blog-card-meta">
             <span>Press</span>
@@ -687,7 +811,7 @@
         </div>
       </a>
 
-      <a href="https://coingape.com/blog/the-hidden-market-behind-every-solana-transaction/" class="blog-card fade-up" target="_blank" rel="noopener">
+      <a href="https://coingape.com/blog/the-hidden-market-behind-every-solana-transaction/" class="blog-card fade-up" data-group="news" target="_blank" rel="noopener">
         <div class="blog-card-body">
           <div class="blog-card-meta">
             <span>Press</span>
@@ -705,7 +829,7 @@
         </div>
       </a>
 
-      <a href="https://blockster.com/what-ticketmaster-can-teach-solana-about-competition" class="blog-card fade-up" target="_blank" rel="noopener">
+      <a href="https://blockster.com/what-ticketmaster-can-teach-solana-about-competition" class="blog-card fade-up" data-group="news" target="_blank" rel="noopener">
         <div class="blog-card-body">
           <div class="blog-card-meta">
             <span>Press</span>
@@ -723,7 +847,7 @@
         </div>
       </a>
 
-      <a href="https://blockchainreporter.net/transparency-may-be-solanas-next-competitive-advantage/" class="blog-card fade-up" target="_blank" rel="noopener">
+      <a href="https://blockchainreporter.net/transparency-may-be-solanas-next-competitive-advantage/" class="blog-card fade-up" data-group="news" target="_blank" rel="noopener">
         <div class="blog-card-body">
           <div class="blog-card-meta">
             <span>Press</span>
@@ -741,7 +865,7 @@
         </div>
       </a>
 
-      <a href="https://cryptodaily.co.uk/2026/06/blockchain-transaction-fees-arent-fair-the-real-problem-is-that-users-cant-see-the-market" class="blog-card fade-up" target="_blank" rel="noopener">
+      <a href="https://cryptodaily.co.uk/2026/06/blockchain-transaction-fees-arent-fair-the-real-problem-is-that-users-cant-see-the-market" class="blog-card fade-up" data-group="news" target="_blank" rel="noopener">
         <div class="blog-card-body">
           <div class="blog-card-meta">
             <span>Press</span>
@@ -810,6 +934,18 @@
     }, { threshold: 0.12 });
 
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    function filterBlog(group, btn) {
+      document.querySelectorAll('.blog-tab').forEach(t => t.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.blog-card').forEach(card => {
+        if (group === 'all' || card.dataset.group === group) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
 
     const nav = document.querySelector('nav');
     window.addEventListener('scroll', () => {
